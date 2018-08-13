@@ -1,19 +1,21 @@
 package com.fg.didemo.controllers;
 
-import com.fg.didemo.services.GreetingsService;
+import com.fg.didemo.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class ConstructorInjectedController {
 
-    private GreetingsService greetingsService;
+    private GreetingService greetingsService;
 
-    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingsService greetingsService) {
+    @Autowired
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingsService) {
         this.greetingsService = greetingsService;
     }
 
-    String sayHello(){
+    public String sayHello(){
         return greetingsService.sayGreeting();
     }
 

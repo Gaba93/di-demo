@@ -1,6 +1,6 @@
 package com.fg.didemo.controllers;
 
-import com.fg.didemo.services.GreetingsServiceImpl;
+import com.fg.didemo.services.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,12 +12,12 @@ public class ConstructorInjectedControllerTest {
 
     @Before
     public void setUp(){
-        this.constructorInjectedController = new ConstructorInjectedController(new GreetingsServiceImpl());
+        this.constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
     }
 
     @Test
     public void testGreeting(){
-        assertEquals(GreetingsServiceImpl.HELLO_GREET, constructorInjectedController.sayHello());
+        assertEquals(GreetingServiceImpl.HELLO_GREET, constructorInjectedController.sayHello());
     }
 
 }

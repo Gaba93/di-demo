@@ -1,17 +1,18 @@
 package com.fg.didemo.controllers;
 
-import com.fg.didemo.services.GreetingsService;
-import com.fg.didemo.services.GreetingsServiceImpl;
+import com.fg.didemo.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class PropertyInjectedController {
 
     @Autowired
-    public GreetingsService greetingsServiceImpl;
+    @Qualifier("greetingServiceImpl")
+    public GreetingService greetingsServiceImpl;
 
-    String sayHello(){
+    public String sayHello(){
         return greetingsServiceImpl.sayGreeting();
     }
 

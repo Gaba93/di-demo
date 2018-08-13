@@ -1,6 +1,6 @@
 package com.fg.didemo.services;
 
-public interface GreetingsService {
+public interface GreetingService {
 
     public String sayGreeting();
 
